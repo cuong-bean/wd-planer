@@ -1,0 +1,1784 @@
+{
+ "source": "Wedding_Planner_Tai_Nha.xlsx",
+ "tasks": [
+  {
+   "id": "CV001",
+   "stage": "prewedding",
+   "group": "Thống nhất gia đình",
+   "title": "Thống nhất các buổi lễ sẽ tổ chức",
+   "milestone": "Trước 3–6 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV002",
+   "stage": "prewedding",
+   "group": "Thống nhất gia đình",
+   "title": "Chốt ngày, giờ và địa điểm từng buổi",
+   "milestone": "Trước 3–6 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV003",
+   "stage": "prewedding",
+   "group": "Thống nhất gia đình",
+   "title": "Thống nhất phong tục và trình tự nghi lễ",
+   "milestone": "Trước 3–6 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV004",
+   "stage": "prewedding",
+   "group": "Thống nhất gia đình",
+   "title": "Chốt ngân sách tối đa và bên chi trả",
+   "milestone": "Trước 3–6 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV005",
+   "stage": "prewedding",
+   "group": "Thống nhất gia đình",
+   "title": "Phân công đầu mối điều phối mỗi nhà",
+   "milestone": "Trước 3–6 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV006",
+   "stage": "prewedding",
+   "group": "Thống nhất gia đình",
+   "title": "Lập danh sách người thân tham gia chuẩn bị",
+   "milestone": "Trước 3–6 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV007",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Lập danh sách khách nhà trai",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "groom"
+  },
+  {
+   "id": "CV008",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Lập danh sách khách nhà gái",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "bride"
+  },
+  {
+   "id": "CV009",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Dự kiến số khách từng buổi",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV010",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Chốt mẫu thiệp và thông tin in thiệp",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV011",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Kiểm tra bản in thử trước khi in hàng loạt",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV012",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Lập kế hoạch gửi thiệp và mời trực tiếp",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV016",
+   "stage": "prewedding",
+   "group": "Nhà cung cấp",
+   "title": "Chọn trang phục cưới và đặt lịch thử",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV050",
+   "stage": "prewedding",
+   "group": "Trang phục & làm đẹp",
+   "title": "Thử và chỉnh trang phục cô dâu chú rể",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV051",
+   "stage": "prewedding",
+   "group": "Trang phục & làm đẹp",
+   "title": "Chuẩn bị áo dài / trang phục làm lễ",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV052",
+   "stage": "prewedding",
+   "group": "Trang phục & làm đẹp",
+   "title": "Chuẩn bị trang phục bố mẹ và người đại diện",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV053",
+   "stage": "prewedding",
+   "group": "Trang phục & làm đẹp",
+   "title": "Chốt trang phục đội bê tráp",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV054",
+   "stage": "prewedding",
+   "group": "Trang phục & làm đẹp",
+   "title": "Chuẩn bị giày, phụ kiện và đồ dự phòng",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV055",
+   "stage": "prewedding",
+   "group": "Trang phục & làm đẹp",
+   "title": "Chốt lịch makeup theo giờ xuất phát",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV056",
+   "stage": "prewedding",
+   "group": "Trang phục & làm đẹp",
+   "title": "Chuẩn bị lịch chăm sóc cá nhân phù hợp",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV057",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Gửi hết thiệp và kiểm tra khách đã nhận",
+   "milestone": "Trước 1–2 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV058",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Gọi xác nhận khách tham dự từng buổi",
+   "milestone": "Trước 1–2 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV059",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Cập nhật số người đi cùng và trẻ nhỏ",
+   "milestone": "Trước 1–2 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV060",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Sắp bàn / khu vực ngồi theo nhóm khách",
+   "milestone": "Trước 1–2 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV061",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Chốt người đón khách và hướng dẫn chỗ ngồi",
+   "milestone": "Trước 1–2 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV062",
+   "stage": "prewedding",
+   "group": "Khách mời",
+   "title": "Bố trí hỗ trợ khách ở xa / khách lớn tuổi",
+   "milestone": "Trước 1–2 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV102",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Chốt ý tưởng, phong cách và ngân sách chụp pre-wedding",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV103",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Chọn studio / nhiếp ảnh gia và chốt gói chụp pre-wedding",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV104",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Chốt ngày chụp, địa điểm, lịch trình và phương án mưa",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV105",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Chốt trang phục, phụ kiện, makeup và kiểu tóc cho buổi chụp",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV106",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Thử trang phục và giày dùng trong buổi chụp",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV107",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Chuẩn bị hoa, đạo cụ và danh sách ảnh mong muốn",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV108",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Chốt xe di chuyển, chi phí địa điểm và giờ có mặt",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV109",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Chuẩn bị đồ cá nhân, nước uống và đồ thay dự phòng",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV110",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Chọn ảnh, duyệt chỉnh sửa và bố cục album",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV111",
+   "stage": "prewedding",
+   "group": "Ảnh pre-wedding",
+   "title": "Nhận file ảnh, album, ảnh cổng trước ngày sử dụng",
+   "milestone": "Trước buổi chụp 2–6 tuần",
+   "note": "Chốt rõ số ảnh, sản phẩm, thời hạn giao và quyền sử dụng ảnh trong gói chụp.",
+   "owner": "both"
+  },
+  {
+   "id": "CV112",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Hai gia đình thống nhất ngày, giờ và địa điểm dạm ngõ",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV113",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Chốt số người tham dự và người đại diện mỗi gia đình",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV114",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Thống nhất lễ vật dạm ngõ theo phong tục hai nhà",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV115",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Đặt / mua trầu cau, trà, bánh, hoa quả theo danh sách đã chốt",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV116",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Thống nhất nội dung trao đổi về ăn hỏi, lễ cưới và trách nhiệm hai bên",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV117",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Chuẩn bị trang phục lịch sự cho cặp đôi và bố mẹ",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV118",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Dọn nhà, sắp bàn ghế, khu tiếp khách và bàn gia tiên nếu có",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV119",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Chuẩn bị trà, nước, bánh hoặc bữa cơm thân mật",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV120",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Chốt xe, lộ trình, giờ xuất phát và đầu mối liên hệ",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV121",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Phân công người đón khách, mời nước và chụp ảnh lưu niệm",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV122",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Kiểm tra và bàn giao lễ vật trước khi đoàn xuất phát",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV123",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Thực hiện phần gặp mặt, giới thiệu và trao lễ đã thống nhất",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV124",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Ghi lại các nội dung hai gia đình đã thống nhất sau buổi gặp",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV125",
+   "stage": "damngo",
+   "group": "Chuẩn bị dạm ngõ",
+   "title": "Thu dọn và gửi lời cảm ơn người hỗ trợ lễ dạm ngõ",
+   "milestone": "Trước lễ 1–2 tuần",
+   "note": "Lễ vật và nghi thức theo thống nhất hai gia đình; chọn Không áp dụng nếu không tổ chức riêng.",
+   "owner": "both"
+  },
+  {
+   "id": "CV022",
+   "stage": "anhoi",
+   "group": "Nghi lễ",
+   "title": "Chốt số tráp, lễ vật và người chuẩn bị",
+   "milestone": "Trước 1–2 tháng",
+   "note": "Điều chỉnh theo phong tục và thống nhất hai gia đình.",
+   "owner": "both"
+  },
+  {
+   "id": "CV023",
+   "stage": "anhoi",
+   "group": "Nghi lễ",
+   "title": "Mời đội bê tráp và thống nhất trang phục",
+   "milestone": "Trước 1–2 tháng",
+   "note": "Điều chỉnh theo phong tục và thống nhất hai gia đình.",
+   "owner": "both"
+  },
+  {
+   "id": "CV026",
+   "stage": "anhoi",
+   "group": "Nghi lễ",
+   "title": "Thống nhất cách trao lễ, lại quả và lì xì",
+   "milestone": "Trước 1–2 tháng",
+   "note": "Điều chỉnh theo phong tục và thống nhất hai gia đình.",
+   "owner": "both"
+  },
+  {
+   "id": "CV126",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Chốt ngày, giờ, địa điểm và trình tự lễ ăn hỏi",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV127",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Chốt danh sách đoàn ăn hỏi và người đại diện phát biểu",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV128",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Chốt đơn vị làm tráp, mẫu tráp và thời gian bàn giao",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV129",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Kiểm tra từng tráp / mâm quả theo số lượng đã thống nhất",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV130",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Chốt trang phục và giờ makeup riêng cho lễ ăn hỏi",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV131",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Chốt giờ có mặt và hướng dẫn đội bê tráp trước lễ",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV132",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Chuẩn bị bàn gia tiên, phông lễ và khu tiếp đoàn ăn hỏi",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV133",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Chuẩn bị trà nước, cỗ ăn hỏi và số mâm theo khách xác nhận",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV134",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Chốt xe đoàn, giờ xuất phát và người nhận tráp tại nhà gái",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "bride"
+  },
+  {
+   "id": "CV135",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Lập lịch trao tráp, phát biểu, lễ gia tiên và chụp ảnh",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV136",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Chuẩn bị phần lại quả và phong bì theo thống nhất hai nhà",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV137",
+   "stage": "anhoi",
+   "group": "Chuẩn bị ăn hỏi",
+   "title": "Bàn giao lễ vật, kiểm đếm đồ thuê và thu dọn sau lễ ăn hỏi",
+   "milestone": "Trước lễ 2–4 tuần",
+   "note": "Nếu ăn hỏi và lễ cưới cùng ngày, phối hợp lịch và phân bổ chi phí dùng chung một lần.",
+   "owner": "both"
+  },
+  {
+   "id": "CV013",
+   "stage": "lecuoi",
+   "group": "Nhà cung cấp",
+   "title": "Khảo sát và lấy báo giá rạp cưới",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV014",
+   "stage": "lecuoi",
+   "group": "Nhà cung cấp",
+   "title": "Chọn đơn vị nấu cỗ và thử món nếu cần",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV015",
+   "stage": "lecuoi",
+   "group": "Nhà cung cấp",
+   "title": "Đặt chụp ảnh và quay phim",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV017",
+   "stage": "lecuoi",
+   "group": "Nhà cung cấp",
+   "title": "Đặt makeup, làm tóc cô dâu",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "bride"
+  },
+  {
+   "id": "CV018",
+   "stage": "lecuoi",
+   "group": "Nhà cung cấp",
+   "title": "Đặt xe hoa và xe đưa đón",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV019",
+   "stage": "lecuoi",
+   "group": "Nhà cung cấp",
+   "title": "Chốt MC hoặc người dẫn lễ",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV020",
+   "stage": "lecuoi",
+   "group": "Nhà cung cấp",
+   "title": "Kiểm tra hợp đồng, tiền cọc và điều kiện đổi hủy",
+   "milestone": "Trước 2–3 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV021",
+   "stage": "lecuoi",
+   "group": "Nghi lễ",
+   "title": "Thống nhất người đại diện phát biểu mỗi bên",
+   "milestone": "Trước 1–2 tháng",
+   "note": "Điều chỉnh theo phong tục và thống nhất hai gia đình.",
+   "owner": "both"
+  },
+  {
+   "id": "CV024",
+   "stage": "lecuoi",
+   "group": "Nghi lễ",
+   "title": "Chốt danh sách đoàn nhà trai / nhà gái",
+   "milestone": "Trước 1–2 tháng",
+   "note": "Điều chỉnh theo phong tục và thống nhất hai gia đình.",
+   "owner": "both"
+  },
+  {
+   "id": "CV025",
+   "stage": "lecuoi",
+   "group": "Nghi lễ",
+   "title": "Chuẩn bị nhẫn cưới và kiểm tra kích cỡ",
+   "milestone": "Trước 1–2 tháng",
+   "note": "Điều chỉnh theo phong tục và thống nhất hai gia đình.",
+   "owner": "both"
+  },
+  {
+   "id": "CV027",
+   "stage": "lecuoi",
+   "group": "Nghi lễ",
+   "title": "Chốt người hướng dẫn lễ gia tiên",
+   "milestone": "Trước 1–2 tháng",
+   "note": "Điều chỉnh theo phong tục và thống nhất hai gia đình.",
+   "owner": "both"
+  },
+  {
+   "id": "CV028",
+   "stage": "lecuoi",
+   "group": "Nhà cửa",
+   "title": "Đo mặt bằng dựng rạp và bố trí lối đi",
+   "milestone": "Trước 1 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV029",
+   "stage": "lecuoi",
+   "group": "Nhà cửa",
+   "title": "Chốt vị trí bàn thờ gia tiên và khu làm lễ",
+   "milestone": "Trước 1 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV030",
+   "stage": "lecuoi",
+   "group": "Nhà cửa",
+   "title": "Kiểm tra khu vệ sinh và nước sinh hoạt",
+   "milestone": "Trước 1 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV031",
+   "stage": "lecuoi",
+   "group": "Nhà cửa",
+   "title": "Bố trí khu thay đồ và cất tư trang",
+   "milestone": "Trước 1 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV032",
+   "stage": "lecuoi",
+   "group": "Nhà cửa",
+   "title": "Bố trí chỗ ngồi khách lớn tuổi",
+   "milestone": "Trước 1 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV033",
+   "stage": "lecuoi",
+   "group": "Nhà cửa",
+   "title": "Thống nhất chỗ đỗ xe và người hướng dẫn",
+   "milestone": "Trước 1 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV034",
+   "stage": "lecuoi",
+   "group": "Nhà cửa",
+   "title": "Thông báo hàng xóm về lịch dựng rạp, tổ chức",
+   "milestone": "Trước 1 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV035",
+   "stage": "lecuoi",
+   "group": "Nhà cửa",
+   "title": "Kiểm tra yêu cầu sử dụng khu vực chung nếu có",
+   "milestone": "Trước 1 tháng",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV036",
+   "stage": "lecuoi",
+   "group": "Rạp & kỹ thuật",
+   "title": "Chốt sơ đồ rạp, số bàn ghế và vị trí cổng hoa",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV037",
+   "stage": "lecuoi",
+   "group": "Rạp & kỹ thuật",
+   "title": "Chốt phông lễ, tên cô dâu chú rể và chính tả",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV038",
+   "stage": "lecuoi",
+   "group": "Rạp & kỹ thuật",
+   "title": "Chốt quạt, ánh sáng và thông gió",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV039",
+   "stage": "lecuoi",
+   "group": "Rạp & kỹ thuật",
+   "title": "Kiểm tra nguồn điện và công suất thiết bị",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV040",
+   "stage": "lecuoi",
+   "group": "Rạp & kỹ thuật",
+   "title": "Chuẩn bị đường điện dự phòng, che dây và chống vấp",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV041",
+   "stage": "lecuoi",
+   "group": "Rạp & kỹ thuật",
+   "title": "Chốt loa, micro, nhạc và người vận hành",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV042",
+   "stage": "lecuoi",
+   "group": "Rạp & kỹ thuật",
+   "title": "Lên phương án che mưa, thoát nước và chống trơn",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV043",
+   "stage": "lecuoi",
+   "group": "Cỗ cưới",
+   "title": "Chốt thực đơn từng buổi và khẩu phần",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV044",
+   "stage": "lecuoi",
+   "group": "Cỗ cưới",
+   "title": "Chốt giá cỗ, đồ uống, nhân sự và phí phát sinh",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV045",
+   "stage": "lecuoi",
+   "group": "Cỗ cưới",
+   "title": "Thống nhất giờ nấu, giao cỗ và phục vụ",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV046",
+   "stage": "lecuoi",
+   "group": "Cỗ cưới",
+   "title": "Chốt bát đĩa, khăn bàn, đá và nước uống",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV047",
+   "stage": "lecuoi",
+   "group": "Cỗ cưới",
+   "title": "Xác định khách ăn chay / dị ứng / nhu cầu riêng",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV048",
+   "stage": "lecuoi",
+   "group": "Cỗ cưới",
+   "title": "Thống nhất số mâm dự phòng và thời hạn báo tăng giảm",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV049",
+   "stage": "lecuoi",
+   "group": "Cỗ cưới",
+   "title": "Bố trí khu nấu, khu rửa và thu gom rác",
+   "milestone": "Trước 2–4 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV063",
+   "stage": "lecuoi",
+   "group": "Điều phối",
+   "title": "Lập lịch theo giờ cho từng nhà",
+   "milestone": "Trước 1 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV064",
+   "stage": "lecuoi",
+   "group": "Điều phối",
+   "title": "Chốt giờ xuất phát, lộ trình và thời gian dự phòng",
+   "milestone": "Trước 1 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV065",
+   "stage": "lecuoi",
+   "group": "Điều phối",
+   "title": "Gửi lịch cho người phụ trách và nhà cung cấp",
+   "milestone": "Trước 1 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV066",
+   "stage": "lecuoi",
+   "group": "Điều phối",
+   "title": "Chốt danh sách ảnh gia đình cần chụp",
+   "milestone": "Trước 1 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV067",
+   "stage": "lecuoi",
+   "group": "Điều phối",
+   "title": "Chốt kịch bản phát biểu và dẫn lễ",
+   "milestone": "Trước 1 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV068",
+   "stage": "lecuoi",
+   "group": "Điều phối",
+   "title": "Chốt người giữ nhẫn, lễ vật và giấy tờ cần thiết",
+   "milestone": "Trước 1 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV069",
+   "stage": "lecuoi",
+   "group": "Điều phối",
+   "title": "Chốt người nhận, ghi và giữ quà mừng",
+   "milestone": "Trước 1 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV070",
+   "stage": "lecuoi",
+   "group": "Điều phối",
+   "title": "Chuẩn bị phong bì, tiền lẻ và người quản lý",
+   "milestone": "Trước 1 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV071",
+   "stage": "lecuoi",
+   "group": "Điều phối",
+   "title": "Kiểm tra các khoản sắp đến hạn thanh toán",
+   "milestone": "Trước 1 tuần",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV072",
+   "stage": "lecuoi",
+   "group": "Chốt lần cuối",
+   "title": "Xác nhận lại từng nhà cung cấp bằng tin nhắn",
+   "milestone": "Trước 2–3 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV073",
+   "stage": "lecuoi",
+   "group": "Chốt lần cuối",
+   "title": "Chốt số mâm với đơn vị nấu cỗ",
+   "milestone": "Trước 2–3 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV074",
+   "stage": "lecuoi",
+   "group": "Chốt lần cuối",
+   "title": "Kiểm tra trang phục, nhẫn, hoa cầm tay",
+   "milestone": "Trước 2–3 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV075",
+   "stage": "lecuoi",
+   "group": "Chốt lần cuối",
+   "title": "Kiểm tra đồ lễ theo danh sách đã thống nhất",
+   "milestone": "Trước 2–3 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV076",
+   "stage": "lecuoi",
+   "group": "Chốt lần cuối",
+   "title": "Chuẩn bị hộp đồ dùng cá nhân và sơ cứu cơ bản",
+   "milestone": "Trước 2–3 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV077",
+   "stage": "lecuoi",
+   "group": "Chốt lần cuối",
+   "title": "Theo dõi thời tiết và kích hoạt phương án dự phòng",
+   "milestone": "Trước 2–3 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV078",
+   "stage": "lecuoi",
+   "group": "Chốt lần cuối",
+   "title": "Lưu danh bạ điều phối và chia sẻ cho hai nhà",
+   "milestone": "Trước 2–3 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV079",
+   "stage": "lecuoi",
+   "group": "Trước ngày cưới",
+   "title": "Dọn nhà và hoàn tất bàn thờ gia tiên",
+   "milestone": "Trước 1 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV080",
+   "stage": "lecuoi",
+   "group": "Trước ngày cưới",
+   "title": "Kiểm tra rạp, bàn ghế, cổng hoa và bảng tên",
+   "milestone": "Trước 1 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV081",
+   "stage": "lecuoi",
+   "group": "Trước ngày cưới",
+   "title": "Thử micro, nhạc, đèn, quạt và nguồn điện",
+   "milestone": "Trước 1 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV082",
+   "stage": "lecuoi",
+   "group": "Trước ngày cưới",
+   "title": "Kiểm tra lối đi, chỗ xe, khu vệ sinh",
+   "milestone": "Trước 1 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV083",
+   "stage": "lecuoi",
+   "group": "Trước ngày cưới",
+   "title": "Kiểm đếm đồ thuê và chụp tình trạng bàn giao",
+   "milestone": "Trước 1 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV084",
+   "stage": "lecuoi",
+   "group": "Trước ngày cưới",
+   "title": "Sắp trang phục, phụ kiện và đồ dùng theo từng bộ",
+   "milestone": "Trước 1 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV085",
+   "stage": "lecuoi",
+   "group": "Trước ngày cưới",
+   "title": "Nhắc giờ có mặt của nhân sự và gia đình",
+   "milestone": "Trước 1 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV086",
+   "stage": "lecuoi",
+   "group": "Trước ngày cưới",
+   "title": "Chốt người mở cửa nhận hàng sáng hôm sau",
+   "milestone": "Trước 1 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV087",
+   "stage": "lecuoi",
+   "group": "Trong ngày cưới",
+   "title": "Kiểm tra makeup, trang phục và hoa đúng giờ",
+   "milestone": "Ngày cưới",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV088",
+   "stage": "lecuoi",
+   "group": "Trong ngày cưới",
+   "title": "Bàn giao nhẫn, lễ vật cho đúng người",
+   "milestone": "Ngày cưới",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV089",
+   "stage": "lecuoi",
+   "group": "Trong ngày cưới",
+   "title": "Kiểm đếm thành viên đoàn trước khi xuất phát",
+   "milestone": "Ngày cưới",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV090",
+   "stage": "lecuoi",
+   "group": "Trong ngày cưới",
+   "title": "Kiểm tra khu làm lễ trước khi khách đến",
+   "milestone": "Ngày cưới",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV091",
+   "stage": "lecuoi",
+   "group": "Trong ngày cưới",
+   "title": "Theo dõi lịch nghi lễ và giờ đón dâu",
+   "milestone": "Ngày cưới",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV092",
+   "stage": "lecuoi",
+   "group": "Trong ngày cưới",
+   "title": "Theo dõi khách đến và điều chỉnh số mâm",
+   "milestone": "Ngày cưới",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV093",
+   "stage": "lecuoi",
+   "group": "Trong ngày cưới",
+   "title": "Kiểm tra đồ ăn, nước uống và phục vụ",
+   "milestone": "Ngày cưới",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV094",
+   "stage": "lecuoi",
+   "group": "Trong ngày cưới",
+   "title": "Thu giữ quà mừng theo người đã phân công",
+   "milestone": "Ngày cưới",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV095",
+   "stage": "lecuoi",
+   "group": "Trong ngày cưới",
+   "title": "Kiểm kê tư trang và đồ có giá trị cuối buổi",
+   "milestone": "Ngày cưới",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV096",
+   "stage": "lecuoi",
+   "group": "Sau cưới",
+   "title": "Đối soát quà mừng với người phụ trách",
+   "milestone": "Sau 1–7 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV097",
+   "stage": "lecuoi",
+   "group": "Sau cưới",
+   "title": "Đối soát và thanh toán nhà cung cấp",
+   "milestone": "Sau 1–7 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV098",
+   "stage": "lecuoi",
+   "group": "Sau cưới",
+   "title": "Trả trang phục, phụ kiện và đồ thuê",
+   "milestone": "Sau 1–7 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV099",
+   "stage": "lecuoi",
+   "group": "Sau cưới",
+   "title": "Thu dọn nhà, rác và tháo rạp",
+   "milestone": "Sau 1–7 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV100",
+   "stage": "lecuoi",
+   "group": "Sau cưới",
+   "title": "Gửi lời cảm ơn khách và người hỗ trợ",
+   "milestone": "Sau 1–7 ngày",
+   "note": "",
+   "owner": "both"
+  },
+  {
+   "id": "CV101",
+   "stage": "lecuoi",
+   "group": "Sau cưới",
+   "title": "Nhận, sao lưu và kiểm tra ảnh / video",
+   "milestone": "Sau 1–7 ngày",
+   "note": "",
+   "owner": "both"
+  }
+ ],
+ "rituals": [
+  {
+   "id": "NL001",
+   "ceremony": "Ăn hỏi",
+   "title": "Người đại diện phát biểu"
+  },
+  {
+   "id": "NL002",
+   "ceremony": "Ăn hỏi",
+   "title": "Tráp / mâm quả theo thỏa thuận"
+  },
+  {
+   "id": "NL003",
+   "ceremony": "Ăn hỏi",
+   "title": "Trầu cau"
+  },
+  {
+   "id": "NL004",
+   "ceremony": "Ăn hỏi",
+   "title": "Trà, rượu"
+  },
+  {
+   "id": "NL005",
+   "ceremony": "Ăn hỏi",
+   "title": "Bánh / trái cây theo phong tục"
+  },
+  {
+   "id": "NL006",
+   "ceremony": "Ăn hỏi",
+   "title": "Phong bì lễ theo thống nhất"
+  },
+  {
+   "id": "NL007",
+   "ceremony": "Ăn hỏi",
+   "title": "Đội bê tráp và trang phục"
+  },
+  {
+   "id": "NL008",
+   "ceremony": "Ăn hỏi",
+   "title": "Lì xì đội bê tráp"
+  },
+  {
+   "id": "NL009",
+   "ceremony": "Ăn hỏi",
+   "title": "Phần lễ lại quả"
+  },
+  {
+   "id": "NL010",
+   "ceremony": "Lễ cưới",
+   "title": "Bàn thờ gia tiên: hoa, quả, vật dụng"
+  },
+  {
+   "id": "NL011",
+   "ceremony": "Lễ cưới",
+   "title": "Đại diện và thành phần đoàn xin dâu"
+  },
+  {
+   "id": "NL012",
+   "ceremony": "Lễ cưới",
+   "title": "Lễ vật xin dâu theo thống nhất"
+  },
+  {
+   "id": "NL013",
+   "ceremony": "Lễ cưới",
+   "title": "Nhẫn cưới"
+  },
+  {
+   "id": "NL014",
+   "ceremony": "Lễ cưới",
+   "title": "Khay / hộp giữ nhẫn"
+  },
+  {
+   "id": "NL015",
+   "ceremony": "Lễ cưới",
+   "title": "Bộ ấm chén, trà và nước làm lễ"
+  },
+  {
+   "id": "NL016",
+   "ceremony": "Lễ cưới",
+   "title": "Trình tự lễ gia tiên tại nhà gái"
+  },
+  {
+   "id": "NL017",
+   "ceremony": "Lễ cưới",
+   "title": "Trình tự đón dâu / gia tiên tại nhà trai"
+  },
+  {
+   "id": "NL018",
+   "ceremony": "Lễ cưới",
+   "title": "Hoa cầm tay cô dâu"
+  },
+  {
+   "id": "NL019",
+   "ceremony": "Lễ cưới",
+   "title": "Người giữ nhẫn và lễ vật"
+  }
+ ],
+ "budget": [
+  {
+   "id": "CP001",
+   "group": "Nghi lễ",
+   "title": "Tráp / mâm quả"
+  },
+  {
+   "id": "CP002",
+   "group": "Nghi lễ",
+   "title": "Hoa, quả, trà, rượu làm lễ"
+  },
+  {
+   "id": "CP003",
+   "group": "Nghi lễ",
+   "title": "Nhẫn cưới"
+  },
+  {
+   "id": "CP004",
+   "group": "Nghi lễ",
+   "title": "Phong bì đội bê tráp"
+  },
+  {
+   "id": "CP005",
+   "group": "Rạp & trang trí",
+   "title": "Rạp, bàn ghế, khăn bàn"
+  },
+  {
+   "id": "CP006",
+   "group": "Rạp & trang trí",
+   "title": "Cổng hoa và phông lễ"
+  },
+  {
+   "id": "CP007",
+   "group": "Rạp & trang trí",
+   "title": "Trang trí bàn thờ gia tiên"
+  },
+  {
+   "id": "CP008",
+   "group": "Kỹ thuật",
+   "title": "Âm thanh và micro"
+  },
+  {
+   "id": "CP009",
+   "group": "Kỹ thuật",
+   "title": "Đèn, quạt và điện dự phòng"
+  },
+  {
+   "id": "CP010",
+   "group": "Cỗ cưới",
+   "title": "Cỗ tiệc nhà gái"
+  },
+  {
+   "id": "CP011",
+   "group": "Cỗ cưới",
+   "title": "Cỗ tiệc nhà trai"
+  },
+  {
+   "id": "CP012",
+   "group": "Cỗ cưới",
+   "title": "Cỗ lễ ăn hỏi"
+  },
+  {
+   "id": "CP013",
+   "group": "Cỗ cưới",
+   "title": "Đồ uống, đá và nước"
+  },
+  {
+   "id": "CP014",
+   "group": "Cỗ cưới",
+   "title": "Nhân sự phục vụ / thu dọn"
+  },
+  {
+   "id": "CP015",
+   "group": "Trang phục",
+   "title": "Váy cưới / áo dài cô dâu"
+  },
+  {
+   "id": "CP016",
+   "group": "Trang phục",
+   "title": "Vest / áo dài chú rể"
+  },
+  {
+   "id": "CP017",
+   "group": "Trang phục",
+   "title": "Trang phục bố mẹ"
+  },
+  {
+   "id": "CP018",
+   "group": "Trang phục",
+   "title": "Trang phục đội bê tráp"
+  },
+  {
+   "id": "CP019",
+   "group": "Làm đẹp",
+   "title": "Makeup và làm tóc"
+  },
+  {
+   "id": "CP020",
+   "group": "Ảnh & quay",
+   "title": "Chụp ảnh và quay phim"
+  },
+  {
+   "id": "CP021",
+   "group": "Dẫn lễ",
+   "title": "MC / người dẫn lễ"
+  },
+  {
+   "id": "CP022",
+   "group": "Xe cộ",
+   "title": "Xe hoa"
+  },
+  {
+   "id": "CP023",
+   "group": "Xe cộ",
+   "title": "Xe đoàn và đón khách"
+  },
+  {
+   "id": "CP024",
+   "group": "Thiệp",
+   "title": "Thiệp cưới và gửi thiệp"
+  },
+  {
+   "id": "CP025",
+   "group": "Nhà cửa",
+   "title": "Dọn dẹp và vật dụng bổ sung"
+  },
+  {
+   "id": "CP026",
+   "group": "Khách mời",
+   "title": "Chỗ nghỉ / hỗ trợ khách ở xa"
+  },
+  {
+   "id": "CP027",
+   "group": "Dự phòng",
+   "title": "Khoản dự phòng chưa phân bổ"
+  }
+ ],
+ "house": [
+  {
+   "id": "NC001",
+   "group": "Gia tiên",
+   "title": "Bàn thờ và bàn làm lễ"
+  },
+  {
+   "id": "NC002",
+   "group": "Gia tiên",
+   "title": "Hoa, phông và bảng tên"
+  },
+  {
+   "id": "NC003",
+   "group": "Đón khách",
+   "title": "Rạp / mái che"
+  },
+  {
+   "id": "NC004",
+   "group": "Đón khách",
+   "title": "Cổng hoa và biển chỉ dẫn"
+  },
+  {
+   "id": "NC005",
+   "group": "Đón khách",
+   "title": "Bàn tiếp khách và nước uống"
+  },
+  {
+   "id": "NC006",
+   "group": "Đón khách",
+   "title": "Bàn nhận quà mừng"
+  },
+  {
+   "id": "NC007",
+   "group": "Ăn tiệc",
+   "title": "Bàn, ghế và khăn bàn"
+  },
+  {
+   "id": "NC008",
+   "group": "Ăn tiệc",
+   "title": "Lối đi và khu khách lớn tuổi"
+  },
+  {
+   "id": "NC009",
+   "group": "Kỹ thuật",
+   "title": "Loa, micro và thiết bị phát nhạc"
+  },
+  {
+   "id": "NC010",
+   "group": "Kỹ thuật",
+   "title": "Đèn và ánh sáng"
+  },
+  {
+   "id": "NC011",
+   "group": "Kỹ thuật",
+   "title": "Quạt / điều hòa"
+  },
+  {
+   "id": "NC012",
+   "group": "Kỹ thuật",
+   "title": "Nguồn điện và dây dẫn"
+  },
+  {
+   "id": "NC013",
+   "group": "Hậu cần",
+   "title": "Phòng thay đồ và giữ tư trang"
+  },
+  {
+   "id": "NC014",
+   "group": "Hậu cần",
+   "title": "Nhà vệ sinh và đồ vệ sinh"
+  },
+  {
+   "id": "NC015",
+   "group": "Hậu cần",
+   "title": "Nước sinh hoạt và khu rửa"
+  },
+  {
+   "id": "NC016",
+   "group": "Hậu cần",
+   "title": "Khu nấu / nhận cỗ"
+  },
+  {
+   "id": "NC017",
+   "group": "Hậu cần",
+   "title": "Thùng rác và thu gom"
+  },
+  {
+   "id": "NC018",
+   "group": "Ngoài nhà",
+   "title": "Chỗ đỗ xe và người hướng dẫn"
+  },
+  {
+   "id": "NC019",
+   "group": "Dự phòng",
+   "title": "Mái che mưa và thoát nước"
+  },
+  {
+   "id": "NC020",
+   "group": "Dự phòng",
+   "title": "Chống trơn và lối thoát thông thoáng"
+  }
+ ],
+ "feast": [
+  {
+   "id": "CO4",
+   "title": "Ăn hỏi"
+  },
+  {
+   "id": "CO5",
+   "title": "Tiệc nhà gái"
+  },
+  {
+   "id": "CO6",
+   "title": "Tiệc nhà trai"
+  }
+ ],
+ "vendors": [
+  {
+   "id": "NCC01",
+   "title": "Rạp & bàn ghế"
+  },
+  {
+   "id": "NCC02",
+   "title": "Trang trí & hoa"
+  },
+  {
+   "id": "NCC03",
+   "title": "Cỗ cưới"
+  },
+  {
+   "id": "NCC04",
+   "title": "Âm thanh & ánh sáng"
+  },
+  {
+   "id": "NCC05",
+   "title": "Trang phục cô dâu"
+  },
+  {
+   "id": "NCC06",
+   "title": "Trang phục chú rể"
+  },
+  {
+   "id": "NCC07",
+   "title": "Makeup & làm tóc"
+  },
+  {
+   "id": "NCC08",
+   "title": "Chụp ảnh & quay phim"
+  },
+  {
+   "id": "NCC09",
+   "title": "MC / dẫn lễ"
+  },
+  {
+   "id": "NCC10",
+   "title": "Xe hoa & xe đoàn"
+  },
+  {
+   "id": "NCC11",
+   "title": "Thiệp cưới"
+  },
+  {
+   "id": "NCC12",
+   "title": "Lễ vật / tráp"
+  }
+ ],
+ "schedule": [
+  {
+   "id": "LT1",
+   "order": 1,
+   "place": "Hai nhà",
+   "title": "Mở cửa, nhận hàng và kiểm tra khu tổ chức"
+  },
+  {
+   "id": "LT2",
+   "order": 2,
+   "place": "Nhà gái",
+   "title": "Makeup, làm tóc và thay trang phục cô dâu"
+  },
+  {
+   "id": "LT3",
+   "order": 3,
+   "place": "Nhà trai",
+   "title": "Chú rể chuẩn bị trang phục và nhận hoa"
+  },
+  {
+   "id": "LT4",
+   "order": 4,
+   "place": "Nhà trai",
+   "title": "Tập trung đoàn, kiểm đếm người và lễ vật"
+  },
+  {
+   "id": "LT5",
+   "order": 5,
+   "place": "Nhà trai",
+   "title": "Xuất phát theo lộ trình đã thống nhất"
+  },
+  {
+   "id": "LT6",
+   "order": 6,
+   "place": "Nhà gái",
+   "title": "Đón đoàn và ổn định khu làm lễ"
+  },
+  {
+   "id": "LT7",
+   "order": 7,
+   "place": "Nhà gái",
+   "title": "Đại diện hai gia đình phát biểu / trao lễ"
+  },
+  {
+   "id": "LT8",
+   "order": 8,
+   "place": "Nhà gái",
+   "title": "Lễ gia tiên theo trình tự gia đình"
+  },
+  {
+   "id": "LT9",
+   "order": 9,
+   "place": "Nhà gái",
+   "title": "Trao nhẫn / quà theo kịch bản đã chốt"
+  },
+  {
+   "id": "LT10",
+   "order": 10,
+   "place": "Nhà gái",
+   "title": "Chụp ảnh gia đình và bàn giao tư trang"
+  },
+  {
+   "id": "LT11",
+   "order": 11,
+   "place": "Hai nhà",
+   "title": "Di chuyển đón dâu về nhà trai"
+  },
+  {
+   "id": "LT12",
+   "order": 12,
+   "place": "Nhà trai",
+   "title": "Đón cô dâu và làm lễ gia tiên"
+  },
+  {
+   "id": "LT13",
+   "order": 13,
+   "place": "Nhà trai",
+   "title": "Chụp ảnh gia đình"
+  },
+  {
+   "id": "LT14",
+   "order": 14,
+   "place": "Hai nhà",
+   "title": "Đón khách tiệc tại địa điểm đã chốt"
+  },
+  {
+   "id": "LT15",
+   "order": 15,
+   "place": "Hai nhà",
+   "title": "Mở tiệc và phục vụ cỗ"
+  },
+  {
+   "id": "LT16",
+   "order": 16,
+   "place": "Hai nhà",
+   "title": "Tiễn khách, thu giữ quà mừng và tư trang"
+  },
+  {
+   "id": "LT17",
+   "order": 17,
+   "place": "Hai nhà",
+   "title": "Kiểm đếm đồ thuê và bàn giao thu dọn"
+  }
+ ],
+ "postWedding": [
+  {
+   "id": "SC1",
+   "title": "Đối soát phong bì và chuyển khoản"
+  },
+  {
+   "id": "SC2",
+   "title": "Lập danh sách và gửi lời cảm ơn"
+  },
+  {
+   "id": "SC3",
+   "title": "Trả váy, áo dài, vest và phụ kiện"
+  },
+  {
+   "id": "SC4",
+   "title": "Trả bàn ghế, bát đĩa và thiết bị thuê"
+  },
+  {
+   "id": "SC5",
+   "title": "Đối soát phát sinh, thanh toán và nhận lại cọc"
+  },
+  {
+   "id": "SC6",
+   "title": "Kiểm tra đồ thất lạc và tư trang"
+  },
+  {
+   "id": "SC7",
+   "title": "Tháo rạp, dọn nhà và thu gom rác"
+  },
+  {
+   "id": "SC8",
+   "title": "Nhận ảnh, video và chọn ảnh cần chỉnh"
+  },
+  {
+   "id": "SC9",
+   "title": "Sao lưu ảnh, video và hợp đồng"
+  },
+  {
+   "id": "SC10",
+   "title": "Chốt tổng chi phí thực tế"
+  }
+ ]
+}
