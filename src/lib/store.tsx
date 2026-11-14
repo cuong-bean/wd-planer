@@ -2,8 +2,12 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { plan, type Owner, type StageId, type Status, type Task } from "./plan";
+import seedGuests from "@/data/guests.json";
 
 const STORAGE_KEY = "wedding-planner-v1";
+
+/** Tăng số này khi thêm đợt khách mới vào `src/data/guests.json` để nạp lại các khách còn thiếu */
+const GUEST_SEED_VERSION = 1;
 
 export interface TaskState {
   status?: Status;
@@ -44,6 +48,8 @@ export interface PlannerState {
   tasks: Record<string, TaskState>;
   items: Record<string, ItemState>;
   guests: Guest[];
+  /** Phiên bản danh sách khách mặc định đã được nạp (khách bị xoá sẽ không bị nạp lại) */
+  guestSeed?: number;
   updatedAt?: string;
 }
 
@@ -64,6 +70,11 @@ function normalize(input: unknown): PlannerState | null {
   if (!input || typeof input !== "object") return null;
   const s = input as Partial<PlannerState>;
   const base = emptyState();
+  let guests: Guest[] = Array.isArray(s.guests) ? s.guests : [];
+  if ((s.guestSeed ?? 0) < GUEST_SEED_VERSION) {
+    const have = new Set(guests.map((g) => g.id));
+    guests = [...guests, ...(seedGuests as Guest[]).filter((g) => !have.has(g.id))];
+  }
   return {
     version: 1,
     settings: {
@@ -73,7 +84,8 @@ function normalize(input: unknown): PlannerState | null {
     },
     tasks: s.tasks && typeof s.tasks === "object" ? s.tasks : {},
     items: s.items && typeof s.items === "object" ? s.items : {},
-    guests: Array.isArray(s.guests) ? s.guests : [],
+    guests,
+    guestSeed: GUEST_SEED_VERSION,
     updatedAt: s.updatedAt,
   };
 }
@@ -94,7 +106,7 @@ interface StoreApi {
 const StoreContext = createContext<StoreApi | null>(null);
 
 export function StoreProvider({ children }: { children: React.ReactNode }) {
-  const [state, setState] = useState<PlannerState>(emptyState);
+  const [state, setState] = useState<PlannerState>(() => normalize({})!);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -151,7 +163,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     return true;
   }, []);
 
-  const reset = useCallback(() => setState(emptyState()), []);
+  const reset = useCallback(() => setState(normalize({})!), []);
 
   const api = useMemo(
     () => ({ state, ready, updateTask, updateItem, updateSettings, addGuest, updateGuest, removeGuest, importState, reset }),

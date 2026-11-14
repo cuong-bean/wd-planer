@@ -6,7 +6,16 @@ import { plan, ROLES, type Role } from "@/lib/plan";
 import { useStore, type GuestSide, type Rsvp } from "@/lib/store";
 
 const SESSIONS = plan.feast.map((f) => f.title);
-const GROUPS = ["Họ hàng", "Bạn bè", "Đồng nghiệp", "Hàng xóm", "Khác"];
+const GROUPS = [
+  "Họ hàng",
+  "Bạn thân",
+  "Bạn cấp 3",
+  "Bạn đại học",
+  "Đồng nghiệp cũ",
+  "Đồng nghiệp mới",
+  "Bạn cùng làng",
+  "Khác",
+];
 const SIDE_LABEL: Record<GuestSide, string> = { bride: "Nhà gái", groom: "Nhà trai" };
 const RSVP_LABEL: Record<Rsvp, string> = { pending: "Chờ", yes: "Tham dự", no: "Không" };
 
@@ -14,6 +23,7 @@ export default function GuestsView({ role }: { role: Role }) {
   const { state, addGuest, updateGuest, removeGuest } = useStore();
   const mySide: GuestSide = ROLES[role].owner === "bride" ? "bride" : "groom";
   const [side, setSide] = useState<GuestSide | "all">(mySide);
+  const [groupFilter, setGroupFilter] = useState("all");
   const [form, setForm] = useState({
     name: "",
     session: mySide === "bride" ? "Tiệc nhà gái" : "Tiệc nhà trai",
@@ -21,7 +31,11 @@ export default function GuestsView({ role }: { role: Role }) {
     invited: "2",
   });
 
-  const list = state.guests.filter((g) => side === "all" || g.side === side);
+  const sideList = state.guests.filter((g) => side === "all" || g.side === side);
+  // Giữ cả các nhóm cũ (VD "Bạn bè") nếu dữ liệu đã lưu còn dùng
+  const groupCount = new Map<string, number>(GROUPS.map((g) => [g, 0]));
+  for (const g of sideList) groupCount.set(g.group, (groupCount.get(g.group) ?? 0) + 1);
+  const list = sideList.filter((g) => groupFilter === "all" || g.group === groupFilter);
   const invited = list.reduce((n, g) => n + g.invited, 0);
   const confirmed = list.filter((g) => g.rsvp === "yes").reduce((n, g) => n + (g.confirmed ?? g.invited), 0);
   const pending = list.filter((g) => g.rsvp === "pending").length;
@@ -50,6 +64,20 @@ export default function GuestsView({ role }: { role: Role }) {
             </button>
           ))}
         </div>
+        <select
+          className="select"
+          aria-label="Lọc theo nhóm"
+          value={groupFilter}
+          onChange={(e) => setGroupFilter(e.target.value)}
+          style={{ width: "auto" }}
+        >
+          <option value="all">Tất cả nhóm ({sideList.length})</option>
+          {[...groupCount].map(([g, n]) => (
+            <option key={g} value={g}>
+              {g} ({n})
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className="summary-grid">
