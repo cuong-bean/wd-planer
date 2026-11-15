@@ -10,6 +10,8 @@ const STORAGE_KEY = "wedding-planner-v1";
 const GUEST_SEED_VERSION = 1;
 
 export interface TaskState {
+  /** Tên do người dùng sửa cho công việc có sẵn (trống = dùng tên gốc) */
+  title?: string;
   status?: Status;
   owner?: Owner;
   due?: string; // yyyy-mm-dd
@@ -178,7 +180,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       const { id: _old, after: _after, ...def } = src as CustomTask;
       // Bản sao giữ người phụ trách, hạn và ghi chú; trạng thái quay về "Chưa bắt đầu"
       return addTask(
-        { ...def, title: `${src.title} (bản sao)`, after: id },
+        { ...def, title: `${st.title || src.title} (bản sao)`, after: id },
         { owner: st.owner, due: st.due, note: st.note },
       );
     },
@@ -292,8 +294,10 @@ export interface TaskView extends Task {
   due: string;
   userNote: string;
   reminder: "overdue" | "soon" | "nodue" | "";
-  /** true nếu là công việc người dùng tự tạo / nhân bản (được sửa tên, xoá) */
+  /** true nếu là công việc người dùng tự tạo / nhân bản (được đổi nhóm, giai đoạn, xoá hẳn) */
   custom: boolean;
+  /** Tên gốc trong kế hoạch (khác `title` nếu người dùng đã đổi tên việc có sẵn) */
+  originalTitle: string;
 }
 
 function newTaskId() {
@@ -350,7 +354,17 @@ export function viewTask(t: Task, s: PlannerState, today = todayISO()): TaskView
     else if (daysBetween(today, due) <= 7) reminder = "soon";
   }
   const custom = !plan.tasks.some((p) => p.id === t.id);
-  return { ...t, owner: st.owner ?? t.owner, status, due, userNote: st.note ?? "", reminder, custom };
+  return {
+    ...t,
+    title: (!custom && st.title) || t.title,
+    originalTitle: t.title,
+    owner: st.owner ?? t.owner,
+    status,
+    due,
+    userNote: st.note ?? "",
+    reminder,
+    custom,
+  };
 }
 
 export function allTaskViews(s: PlannerState) {

@@ -312,6 +312,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; lett
 @media (hover: none) { .task-action { opacity: 1; } }
 .chip.custom { background: var(--accent-soft); color: var(--accent); }
 
+.link-btn {
+  display: inline-flex; align-items: center; gap: 4px; padding: 0; border: 0; background: none;
+  font-size: 12px; font-weight: 600; color: var(--accent); cursor: pointer;
+}
+.link-btn:hover { text-decoration: underline; }
+
 /* Khung "Đã xoá" ở cuối danh sách giai đoạn */
 .removed > summary { cursor: pointer; list-style: none; }
 .removed > summary::-webkit-details-marker { display: none; }

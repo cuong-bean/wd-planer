@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ArrowUpRight, CalendarClock, Check, ChevronDown, Copy, Minus, Trash2 } from "lucide-react";
+import { ArrowUpRight, CalendarClock, Check, ChevronDown, Copy, Minus, RotateCcw, Trash2 } from "lucide-react";
 import {
   GROUP_LINK,
   OWNER_LABEL,
@@ -66,6 +66,19 @@ export default function TaskItem({
     }
   };
 
+  // Ô tên giữ bản nháp riêng: việc có sẵn bị xoá trắng tên thì quay về tên gốc khi rời ô
+  const [titleDraft, setTitleDraft] = useState(task.title);
+  const renamed = !task.custom && task.title !== task.originalTitle;
+  const setTitle = (v: string) => {
+    setTitleDraft(v);
+    if (task.custom) editCustomTask(task.id, { title: v });
+    else updateTask(task.id, { title: v.trim() && v.trim() !== task.originalTitle ? v : undefined });
+  };
+  const resetTitle = () => {
+    setTitleDraft(task.originalTitle);
+    updateTask(task.id, { title: undefined });
+  };
+
   const duplicate = () => {
     const id = duplicateTask(task.id);
     if (id) onReveal?.(id);
@@ -108,51 +121,67 @@ export default function TaskItem({
       {open && (
         <div className="task-detail">
           {task.note && <div className="hint">{task.note}</div>}
-          {task.custom && (
-            <div className="fields">
-              <label className="field wide">
-                <span>Tên công việc</span>
-                <input
-                  className="input"
-                  value={task.title}
-                  autoFocus={defaultOpen}
-                  placeholder="VD: Đặt xe đưa đón khách"
-                  onChange={(e) => editCustomTask(task.id, { title: e.target.value })}
-                />
-              </label>
-              <label className="field">
-                <span>Nhóm</span>
-                {/* Lưu khi rời ô / Enter: đổi nhóm sẽ chuyển công việc sang khung nhóm khác */}
-                <input
-                  className="input"
-                  list={`groups-${task.id}`}
-                  value={groupDraft}
-                  onChange={(e) => setGroupDraft(e.target.value)}
-                  onBlur={commitGroup}
-                  onKeyDown={(e) => e.key === "Enter" && commitGroup()}
-                />
-                <datalist id={`groups-${task.id}`}>
-                  {groupOptions.map((g) => (
-                    <option key={g} value={g} />
-                  ))}
-                </datalist>
-              </label>
-              <label className="field">
-                <span>Giai đoạn</span>
-                <select
-                  className="select"
-                  value={task.stage}
-                  onChange={(e) => editCustomTask(task.id, { stage: e.target.value as StageId })}
-                >
-                  {STAGES.map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
+          <div className="fields">
+            <div className="field wide">
+              <span className="row" style={{ justifyContent: "space-between" }} id={`title-${task.id}`}>
+                Tên công việc
+                {renamed && (
+                  <button
+                    type="button"
+                    className="link-btn"
+                    onClick={resetTitle}
+                    title={`Tên gốc: ${task.originalTitle}`}
+                  >
+                    <RotateCcw size={12} /> Dùng tên gốc
+                  </button>
+                )}
+              </span>
+              <input
+                className="input"
+                aria-labelledby={`title-${task.id}`}
+                value={titleDraft}
+                autoFocus={defaultOpen}
+                placeholder={task.custom ? "VD: Đặt xe đưa đón khách" : task.originalTitle}
+                onChange={(e) => setTitle(e.target.value)}
+                onBlur={() => !task.custom && !titleDraft.trim() && setTitleDraft(task.originalTitle)}
+              />
             </div>
-          )}
+            {task.custom && (
+              <>
+                <label className="field">
+                  <span>Nhóm</span>
+                  {/* Lưu khi rời ô / Enter: đổi nhóm sẽ chuyển công việc sang khung nhóm khác */}
+                  <input
+                    className="input"
+                    list={`groups-${task.id}`}
+                    value={groupDraft}
+                    onChange={(e) => setGroupDraft(e.target.value)}
+                    onBlur={commitGroup}
+                    onKeyDown={(e) => e.key === "Enter" && commitGroup()}
+                  />
+                  <datalist id={`groups-${task.id}`}>
+                    {groupOptions.map((g) => (
+                      <option key={g} value={g} />
+                    ))}
+                  </datalist>
+                </label>
+                <label className="field">
+                  <span>Giai đoạn</span>
+                  <select
+                    className="select"
+                    value={task.stage}
+                    onChange={(e) => editCustomTask(task.id, { stage: e.target.value as StageId })}
+                  >
+                    {STAGES.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </>
+            )}
+          </div>
           <div className="fields">
             <label className="field">
               <span>Trạng thái</span>

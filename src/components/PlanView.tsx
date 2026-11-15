@@ -347,7 +347,7 @@ export default function PlanView({ role }: { role: Role }) {
           {removedHere.map((t) => (
             <div className="guest-row" key={t.id}>
               <div style={{ minWidth: 0 }}>
-                <div className="task-title">{t.title}</div>
+                <div className="task-title">{state.tasks[t.id]?.title || t.title}</div>
                 <div className="task-meta">
                   <span className="chip">{t.group}</span>
                 </div>
