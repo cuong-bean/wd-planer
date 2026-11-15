@@ -1,10 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { ArrowUpRight, CalendarClock, Check, ChevronDown, Minus } from "lucide-react";
-import { GROUP_LINK, OWNER_LABEL, STATUS_LABEL, sectionOf, type Owner, type Role, type Status } from "@/lib/plan";
-import { formatDate, useStore, type TaskView } from "@/lib/store";
+import { useMemo, useState } from "react";
+import { ArrowUpRight, CalendarClock, Check, ChevronDown, Copy, Minus, Trash2 } from "lucide-react";
+import {
+  GROUP_LINK,
+  OWNER_LABEL,
+  STAGES,
+  STATUS_LABEL,
+  sectionOf,
+  type Owner,
+  type Role,
+  type StageId,
+  type Status,
+} from "@/lib/plan";
+import { allTasks, formatDate, useStore, type TaskView } from "@/lib/store";
 
 export function StatusCheck({ status, onChange, label }: { status: Status; onChange: (s: Status) => void; label: string }) {
   const next: Status = status === "done" ? "todo" : "done";
@@ -21,19 +31,55 @@ export function StatusCheck({ status, onChange, label }: { status: Status; onCha
   );
 }
 
-export default function TaskItem({ task, role, compact = false }: { task: TaskView; role: Role; compact?: boolean }) {
-  const { updateTask } = useStore();
-  const [open, setOpen] = useState(false);
+export default function TaskItem({
+  task,
+  role,
+  compact = false,
+  defaultOpen = false,
+  onReveal,
+}: {
+  task: TaskView;
+  role: Role;
+  compact?: boolean;
+  /** Mở sẵn phần chi tiết (VD vừa tạo / vừa nhân bản) */
+  defaultOpen?: boolean;
+  /** Yêu cầu danh sách mở sẵn công việc này (bản sao vừa tạo, hoặc việc vừa đổi nhóm) */
+  onReveal?: (id: string) => void;
+}) {
+  const { state, updateTask, duplicateTask, editCustomTask, removeCustomTask } = useStore();
+  const [open, setOpen] = useState(defaultOpen);
   const section = GROUP_LINK[task.group];
+
+  // Gợi ý nhóm: các nhóm đang có trong cùng giai đoạn
+  const groupOptions = useMemo(
+    () => (task.custom ? [...new Set(allTasks(state).filter((t) => t.stage === task.stage).map((t) => t.group))] : []),
+    [state, task.custom, task.stage],
+  );
+
+  const [groupDraft, setGroupDraft] = useState(task.group);
+  const commitGroup = () => {
+    const g = groupDraft.trim();
+    if (!g) return setGroupDraft(task.group);
+    if (g !== task.group) {
+      editCustomTask(task.id, { group: g });
+      onReveal?.(task.id);
+    }
+  };
+
+  const duplicate = () => {
+    const id = duplicateTask(task.id);
+    if (id) onReveal?.(id);
+  };
 
   return (
     <div className={`task is-${task.status}`}>
       <div className="task-row">
         <StatusCheck status={task.status} label={task.title} onChange={(status) => updateTask(task.id, { status })} />
         <button className="task-main" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
-          <div className="task-title">{task.title}</div>
+          <div className="task-title">{task.title || <span className="muted">(Chưa đặt tên)</span>}</div>
           <div className="task-meta">
             <span className={`chip ${task.owner}`}>{OWNER_LABEL[task.owner]}</span>
+            {task.custom && <span className="chip custom">Tự thêm</span>}
             {!compact && task.milestone && <span className="chip">{task.milestone}</span>}
             {task.status === "doing" && <span className="chip doing">Đang làm</span>}
             {task.status === "na" && <span className="chip">Không áp dụng</span>}
@@ -46,6 +92,14 @@ export default function TaskItem({ task, role, compact = false }: { task: TaskVi
             )}
           </div>
         </button>
+        <button
+          className="btn icon ghost task-action"
+          onClick={duplicate}
+          aria-label={`Nhân bản: ${task.title}`}
+          title="Nhân bản công việc"
+        >
+          <Copy size={15} />
+        </button>
         <button className={`chevron ${open ? "open" : ""}`} onClick={() => setOpen((o) => !o)} aria-label="Chi tiết">
           <ChevronDown size={18} />
         </button>
@@ -54,6 +108,51 @@ export default function TaskItem({ task, role, compact = false }: { task: TaskVi
       {open && (
         <div className="task-detail">
           {task.note && <div className="hint">{task.note}</div>}
+          {task.custom && (
+            <div className="fields">
+              <label className="field wide">
+                <span>Tên công việc</span>
+                <input
+                  className="input"
+                  value={task.title}
+                  autoFocus={defaultOpen}
+                  placeholder="VD: Đặt xe đưa đón khách"
+                  onChange={(e) => editCustomTask(task.id, { title: e.target.value })}
+                />
+              </label>
+              <label className="field">
+                <span>Nhóm</span>
+                {/* Lưu khi rời ô / Enter: đổi nhóm sẽ chuyển công việc sang khung nhóm khác */}
+                <input
+                  className="input"
+                  list={`groups-${task.id}`}
+                  value={groupDraft}
+                  onChange={(e) => setGroupDraft(e.target.value)}
+                  onBlur={commitGroup}
+                  onKeyDown={(e) => e.key === "Enter" && commitGroup()}
+                />
+                <datalist id={`groups-${task.id}`}>
+                  {groupOptions.map((g) => (
+                    <option key={g} value={g} />
+                  ))}
+                </datalist>
+              </label>
+              <label className="field">
+                <span>Giai đoạn</span>
+                <select
+                  className="select"
+                  value={task.stage}
+                  onChange={(e) => editCustomTask(task.id, { stage: e.target.value as StageId })}
+                >
+                  {STAGES.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+          )}
           <div className="fields">
             <label className="field">
               <span>Trạng thái</span>
@@ -103,11 +202,24 @@ export default function TaskItem({ task, role, compact = false }: { task: TaskVi
               {task.id} · {task.group}
               {task.milestone ? ` · Mốc gợi ý: ${task.milestone}` : ""}
             </span>
-            {section && !compact && (
-              <Link className="related" href={`/${role}/${section}/`}>
-                Mở {sectionOf(section).short} <ArrowUpRight size={15} />
-              </Link>
-            )}
+            <div className="row">
+              {section && !compact && (
+                <Link className="related" href={`/${role}/${section}/`}>
+                  Mở {sectionOf(section).short} <ArrowUpRight size={15} />
+                </Link>
+              )}
+              <button className="btn sm" onClick={duplicate}>
+                <Copy size={14} /> Nhân bản
+              </button>
+              {task.custom && (
+                <button
+                  className="btn sm ghost danger"
+                  onClick={() => confirm(`Xoá công việc "${task.title || "(Chưa đặt tên)"}"?`) && removeCustomTask(task.id)}
+                >
+                  <Trash2 size={14} /> Xoá
+                </button>
+              )}
+            </div>
           </div>
         </div>
       )}

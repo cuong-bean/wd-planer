@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import { ArrowUpRight, Search } from "lucide-react";
-import { GROUP_LINK, ROLES, STAGES, sectionOf, type Role, type StageId } from "@/lib/plan";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { ArrowUpRight, Plus, Search, X } from "lucide-react";
+import { GROUP_LINK, OWNER_LABEL, ROLES, STAGES, sectionOf, type Owner, type Role, type StageId } from "@/lib/plan";
 import { allTaskViews, daysBetween, formatDate, isMine, progress, todayISO, useStore } from "@/lib/store";
 import ProgressRing from "./ProgressRing";
 import TaskItem from "./TaskItem";
@@ -12,12 +12,22 @@ type Scope = "mine" | "all";
 type Filter = "open" | "done" | "all";
 
 export default function PlanView({ role }: { role: Role }) {
-  const { state, ready } = useStore();
+  const { state, ready, addTask } = useStore();
   const me = ROLES[role].owner;
   const [stage, setStage] = useState<StageId>("prewedding");
   const [scope, setScope] = useState<Scope>("mine");
   const [filter, setFilter] = useState<Filter>("open");
   const [q, setQ] = useState("");
+  // Công việc được mở sẵn chi tiết (vừa tạo / vừa nhân bản)
+  const [openId, setOpenId] = useState<string | null>(null);
+  const [adding, setAdding] = useState(false);
+  const [draft, setDraft] = useState<{ title: string; group: string; owner: Owner; due: string }>({
+    title: "",
+    group: "",
+    owner: me,
+    due: "",
+  });
+  const titleRef = useRef<HTMLInputElement>(null);
 
   // Ghi nhớ giai đoạn đang xem cho từng vai trò (chỉ là tiện ích, lỗi thì bỏ qua)
   const key = `wp-stage-${role}`;
@@ -60,6 +70,42 @@ export default function PlanView({ role }: { role: Role }) {
     for (const t of visible) m.set(t.group, [...(m.get(t.group) ?? []), t]);
     return [...m.entries()];
   }, [visible]);
+
+  // Nhóm gợi ý khi thêm việc: mọi nhóm đang có ở giai đoạn này
+  const stageGroups = useMemo(
+    () => [...new Set(all.filter((t) => t.stage === stage).map((t) => t.group))],
+    [all, stage],
+  );
+
+  // Hiện công việc vừa tạo / nhân bản dù bộ lọc hiện tại đang ẩn nó
+  const unhide = () => {
+    if (filter === "done") setFilter("open");
+    setQ("");
+  };
+  const reveal = (id: string) => {
+    setOpenId(id);
+    unhide();
+  };
+
+  const openForm = (group?: string) => {
+    setDraft((d) => ({ ...d, group: group ?? (d.group || stageGroups[0] || "Việc khác") }));
+    setAdding(true);
+    setTimeout(() => titleRef.current?.focus(), 0);
+  };
+
+  const submitTask = (e: React.FormEvent) => {
+    e.preventDefault();
+    const title = draft.title.trim();
+    if (!title) return titleRef.current?.focus();
+    addTask(
+      { stage, group: draft.group.trim() || "Việc khác", title, milestone: "", note: "", owner: draft.owner },
+      draft.due ? { due: draft.due } : undefined,
+    );
+    if (scope === "mine" && draft.owner !== "both" && draft.owner !== me) setScope("all");
+    unhide();
+    setDraft((d) => ({ ...d, title: "", due: "" }));
+    titleRef.current?.focus();
+  };
 
   if (!ready) return <div className="skeleton" />;
 
@@ -161,7 +207,81 @@ export default function PlanView({ role }: { role: Role }) {
           <Search size={16} />
           <input className="input" placeholder="Tìm công việc…" value={q} onChange={(e) => setQ(e.target.value)} />
         </label>
+        {!adding && (
+          <button className="btn primary" onClick={() => openForm()}>
+            <Plus size={16} /> Thêm công việc
+          </button>
+        )}
       </div>
+
+      {adding && (
+        <form className="card card-pad" onSubmit={submitTask} style={{ marginBottom: 16 }}>
+          <div className="task-form">
+            <label className="field grow">
+              <span>Công việc mới · {current.name}</span>
+              <input
+                ref={titleRef}
+                className="input"
+                value={draft.title}
+                placeholder="VD: Đặt xe đưa đón khách"
+                onChange={(e) => setDraft({ ...draft, title: e.target.value })}
+                onKeyDown={(e) => e.key === "Escape" && setAdding(false)}
+              />
+            </label>
+            <label className="field">
+              <span>Nhóm</span>
+              <input
+                className="input"
+                list="plan-groups"
+                value={draft.group}
+                placeholder="Chọn hoặc gõ nhóm mới"
+                onChange={(e) => setDraft({ ...draft, group: e.target.value })}
+              />
+              <datalist id="plan-groups">
+                {stageGroups.map((g) => (
+                  <option key={g} value={g} />
+                ))}
+              </datalist>
+            </label>
+            <label className="field">
+              <span>Người phụ trách</span>
+              <select
+                className="select"
+                value={draft.owner}
+                onChange={(e) => setDraft({ ...draft, owner: e.target.value as Owner })}
+              >
+                {(["bride", "groom", "both"] as Owner[]).map((o) => (
+                  <option key={o} value={o}>
+                    {OWNER_LABEL[o]}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="field">
+              <span>Hạn chốt</span>
+              <input
+                type="date"
+                className="input"
+                value={draft.due}
+                onChange={(e) => setDraft({ ...draft, due: e.target.value })}
+              />
+            </label>
+            <div className="row" style={{ flexWrap: "nowrap" }}>
+              <button className="btn primary" type="submit" style={{ height: 40 }}>
+                <Plus size={16} /> Thêm
+              </button>
+              <button
+                className="btn icon ghost"
+                type="button"
+                aria-label="Đóng form thêm công việc"
+                onClick={() => setAdding(false)}
+              >
+                <X size={16} />
+              </button>
+            </div>
+          </div>
+        </form>
+      )}
 
       {groups.length === 0 && (
         <div className="card empty">
@@ -185,9 +305,17 @@ export default function PlanView({ role }: { role: Role }) {
                   {sectionOf(sec).short} <ArrowUpRight size={14} />
                 </Link>
               )}
+              <button
+                className="btn icon ghost sm group-add"
+                onClick={() => openForm(group)}
+                aria-label={`Thêm công việc vào nhóm ${group}`}
+                title="Thêm công việc vào nhóm này"
+              >
+                <Plus size={16} />
+              </button>
             </div>
             {tasks.map((t) => (
-              <TaskItem key={t.id} task={t} role={role} />
+              <TaskItem key={t.id} task={t} role={role} defaultOpen={openId === t.id} onReveal={reveal} />
             ))}
           </section>
         );
