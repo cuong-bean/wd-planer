@@ -53,6 +53,8 @@ export interface PlannerState {
   settings: Settings;
   tasks: Record<string, TaskState>;
   customTasks: CustomTask[];
+  /** Id các công việc có sẵn đã bị xoá (ẩn đi, khôi phục được) */
+  removedTasks: string[];
   items: Record<string, ItemState>;
   guests: Guest[];
   /** Phiên bản danh sách khách mặc định đã được nạp (khách bị xoá sẽ không bị nạp lại) */
@@ -70,6 +72,7 @@ export const emptyState = (): PlannerState => ({
   },
   tasks: {},
   customTasks: [],
+  removedTasks: [],
   items: {},
   guests: [],
 });
@@ -94,6 +97,7 @@ function normalize(input: unknown): PlannerState | null {
     customTasks: Array.isArray(s.customTasks)
       ? s.customTasks.filter((t) => t && typeof t.id === "string" && typeof t.title === "string")
       : [],
+    removedTasks: Array.isArray(s.removedTasks) ? s.removedTasks.filter((id) => typeof id === "string") : [],
     items: s.items && typeof s.items === "object" ? s.items : {},
     guests,
     guestSeed: GUEST_SEED_VERSION,
@@ -110,7 +114,9 @@ interface StoreApi {
   /** Nhân bản một công việc (có sẵn hoặc tự tạo), trả về id bản sao */
   duplicateTask: (id: string) => string | null;
   editCustomTask: (id: string, patch: Partial<Omit<CustomTask, "id">>) => void;
-  removeCustomTask: (id: string) => void;
+  /** Xoá công việc: việc tự thêm bị xoá hẳn, việc có sẵn được ẩn đi (khôi phục được) */
+  removeTask: (id: string) => void;
+  restoreTasks: (ids: string[]) => void;
   updateItem: (id: string, patch: Partial<ItemState>) => void;
   updateSettings: (patch: Partial<Settings>) => void;
   addGuest: (g: Omit<Guest, "id">) => void;
@@ -183,8 +189,12 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     setState((s) => touch({ ...s, customTasks: s.customTasks.map((t) => (t.id === id ? { ...t, ...patch } : t)) }));
   }, []);
 
-  const removeCustomTask = useCallback((id: string) => {
+  const removeTask = useCallback((id: string) => {
     setState((s) => {
+      if (plan.tasks.some((t) => t.id === id)) {
+        // Việc có sẵn: chỉ ẩn, giữ nguyên trạng thái/ghi chú để khôi phục
+        return s.removedTasks.includes(id) ? s : touch({ ...s, removedTasks: [...s.removedTasks, id] });
+      }
       const { [id]: _gone, ...tasks } = s.tasks;
       const removed = s.customTasks.find((t) => t.id === id);
       const customTasks = s.customTasks
@@ -193,6 +203,10 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         .map((t) => (t.after === id ? { ...t, after: removed?.after } : t));
       return touch({ ...s, tasks, customTasks });
     });
+  }, []);
+
+  const restoreTasks = useCallback((ids: string[]) => {
+    setState((s) => touch({ ...s, removedTasks: s.removedTasks.filter((id) => !ids.includes(id)) }));
   }, []);
 
   const updateItem = useCallback((id: string, patch: Partial<ItemState>) => {
@@ -233,7 +247,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       addTask,
       duplicateTask,
       editCustomTask,
-      removeCustomTask,
+      removeTask,
+      restoreTasks,
       updateItem,
       updateSettings,
       addGuest,
@@ -249,7 +264,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       addTask,
       duplicateTask,
       editCustomTask,
-      removeCustomTask,
+      removeTask,
+      restoreTasks,
       updateItem,
       updateSettings,
       addGuest,
@@ -297,12 +313,14 @@ export function allTasks(s: PlannerState): Task[] {
     if (c.after && c.after !== c.id && ids.has(c.after)) children.set(c.after, [...(children.get(c.after) ?? []), c]);
     else tail.push(c);
   }
+  const removed = new Set(s.removedTasks);
   const out: Task[] = [];
   const seen = new Set<string>();
   const visit = (t: Task) => {
     if (seen.has(t.id)) return;
     seen.add(t.id);
-    out.push(t);
+    // Việc có sẵn đã xoá thì ẩn, nhưng các bản sao của nó vẫn giữ đúng vị trí
+    if (!removed.has(t.id)) out.push(t);
     for (const c of children.get(t.id) ?? []) visit(c);
   };
   plan.tasks.forEach(visit);

@@ -46,7 +46,7 @@ export default function TaskItem({
   /** Yêu cầu danh sách mở sẵn công việc này (bản sao vừa tạo, hoặc việc vừa đổi nhóm) */
   onReveal?: (id: string) => void;
 }) {
-  const { state, updateTask, duplicateTask, editCustomTask, removeCustomTask } = useStore();
+  const { state, updateTask, duplicateTask, editCustomTask, removeTask } = useStore();
   const [open, setOpen] = useState(defaultOpen);
   const section = GROUP_LINK[task.group];
 
@@ -211,14 +211,18 @@ export default function TaskItem({
               <button className="btn sm" onClick={duplicate}>
                 <Copy size={14} /> Nhân bản
               </button>
-              {task.custom && (
-                <button
-                  className="btn sm ghost danger"
-                  onClick={() => confirm(`Xoá công việc "${task.title || "(Chưa đặt tên)"}"?`) && removeCustomTask(task.id)}
-                >
-                  <Trash2 size={14} /> Xoá
-                </button>
-              )}
+              <button
+                className="btn sm ghost danger"
+                onClick={() =>
+                  confirm(
+                    task.custom
+                      ? `Xoá công việc "${task.title || "(Chưa đặt tên)"}"?`
+                      : `Xoá công việc "${task.title}" khỏi kế hoạch?\nCó thể khôi phục ở cuối danh sách giai đoạn này.`,
+                  ) && removeTask(task.id)
+                }
+              >
+                <Trash2 size={14} /> Xoá
+              </button>
             </div>
           </div>
         </div>

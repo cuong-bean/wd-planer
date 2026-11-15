@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, Plus, Search, X } from "lucide-react";
-import { GROUP_LINK, OWNER_LABEL, ROLES, STAGES, sectionOf, type Owner, type Role, type StageId } from "@/lib/plan";
+import { ArrowUpRight, Plus, RotateCcw, Search, X } from "lucide-react";
+import { GROUP_LINK, OWNER_LABEL, ROLES, STAGES, plan, sectionOf, type Owner, type Role, type StageId } from "@/lib/plan";
 import { allTaskViews, daysBetween, formatDate, isMine, progress, todayISO, useStore } from "@/lib/store";
 import ProgressRing from "./ProgressRing";
 import TaskItem from "./TaskItem";
@@ -12,7 +12,7 @@ type Scope = "mine" | "all";
 type Filter = "open" | "done" | "all";
 
 export default function PlanView({ role }: { role: Role }) {
-  const { state, ready, addTask } = useStore();
+  const { state, ready, addTask, restoreTasks } = useStore();
   const me = ROLES[role].owner;
   const [stage, setStage] = useState<StageId>("prewedding");
   const [scope, setScope] = useState<Scope>("mine");
@@ -75,6 +75,12 @@ export default function PlanView({ role }: { role: Role }) {
   const stageGroups = useMemo(
     () => [...new Set(all.filter((t) => t.stage === stage).map((t) => t.group))],
     [all, stage],
+  );
+
+  // Việc có sẵn đã xoá ở giai đoạn này (khôi phục được)
+  const removedHere = useMemo(
+    () => plan.tasks.filter((t) => t.stage === stage && state.removedTasks.includes(t.id)),
+    [state.removedTasks, stage],
   );
 
   // Hiện công việc vừa tạo / nhân bản dù bộ lọc hiện tại đang ẩn nó
@@ -320,6 +326,39 @@ export default function PlanView({ role }: { role: Role }) {
           </section>
         );
       })}
+
+      {removedHere.length > 0 && (
+        <details className="card group removed">
+          <summary className="group-head">
+            <h3>Đã xoá</h3>
+            <span className="count">{removedHere.length} việc có sẵn ở giai đoạn này</span>
+            <button
+              type="button"
+              className="btn sm"
+              style={{ marginLeft: "auto" }}
+              onClick={(e) => {
+                e.preventDefault();
+                restoreTasks(removedHere.map((t) => t.id));
+              }}
+            >
+              <RotateCcw size={14} /> Khôi phục tất cả
+            </button>
+          </summary>
+          {removedHere.map((t) => (
+            <div className="guest-row" key={t.id}>
+              <div style={{ minWidth: 0 }}>
+                <div className="task-title">{t.title}</div>
+                <div className="task-meta">
+                  <span className="chip">{t.group}</span>
+                </div>
+              </div>
+              <button className="btn sm" onClick={() => restoreTasks([t.id])}>
+                <RotateCcw size={14} /> Khôi phục
+              </button>
+            </div>
+          ))}
+        </details>
+      )}
     </>
   );
 }
